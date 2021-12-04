@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
-/* Reset css */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -13,11 +12,8 @@
   --white: #fff;
   --red: #f83038;
 }
-
-
-/* Main css */
 .main {
-  position: relative;
+  position: relative;  
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,12 +29,12 @@
   left: 50%;
   transform: translate(-50%,-50%);
   font-size: 16vw;
+  color: rgba(255,255,255,0.1);
   font-weight: 700;
-  color: rgba(255,255,255,0.05);
 }
-/* Header css */
-header {
-  position: relative;
+
+.main header {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -47,140 +43,137 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.logo {
-  max-width: 80px;
+
+header .logo {
+  max-width: 100px;
 }
-header .navbar  {
-  display: flex;  
+header .navbar {
+  display: flex;
 }
 header .navbar li {
   list-style: none;
 }
 header .navbar li a {
-  margin-left: 40px;
-  color: var(--white);
   text-decoration: none;
+  color: var(--white);
+  margin-left: 40px;
   transition: 0.3s;
-  transition-property: color;
+  font-weight: 500;
 }
 header .navbar li a:hover {
   color: var(--red);
 }
-/* Content Css */
+
+/* Setup postion cho container */
 .container {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content:center ;
+  justify-content: space-between;
   align-items: center;
-  z-index: 1;
+  margin-top: 100px;
+  /* z-index: 1; */
 }
+/* Setup thuộc tính cho từng Element bên trong container */
 .container h2 {
-  text-align: center;
-  font-size: 3em;
-  color: var(--white);
+  font-size: 4em;
   font-weight: 400;
-
+  color: var(--white);  
+  text-align: center;
 }
 .container h2 span {
   font-weight: 700;
   color: var(--red);
 }
-.container .btn-bike{
+.container .btn-bike {
   display: inline-block;
-  background-color: var(--red);
+  background: var(--red);
   color: var(--white);
-  text-decoration: none;
   padding: 16px 36px;
-  margin-top: 10px;
-  border-radius: 30px;
-  font-size: 1em;
+  margin-top: 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2em;
   letter-spacing: 2px;
   transition: 0.3s;
-  transition-property: letter-spacing;
 }
 .container .btn-bike:hover {
-  letter-spacing: 4px;
+  letter-spacing: 6px;
 }
 .container .bike {
-  max-width: 60%;
+  max-width: 80%;
 }
-/* Css Silder */
-.sliders .slider {  
+/* Setup vị trí cho sliders */
+.slider .slide {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 0;
-  width: 100%;  
-  padding: 0 100px;
   transform: translateY(-50%);
-  z-index: 2;
-}
-.sliders .slider {
+  width: 100%;
+  padding: 0 100px;
   display: flex;
-  justify-content: space-between;  
-  transition: 0.3s;
+  justify-content: space-between;
+  align-items: center;
   opacity: 0;
-  pointer-events: none;
+  transition: 0.3s;
+  /* pointer-events: none; */
 }
-.sliders .slider.active {
+.slider .slide.active {
   opacity: 1;
+  top: 50%;
 }
-.sliders .slider h2 {
+.slider .slide h2 {
   color: var(--white);
-  font-size: 2em;  
+  font-size: 2.5em;
 }
-.sliders .slider h2:last-child {
-  text-align: end;
+.slider .slide h2:last-child {
+  text-align: right;
 }
-.sliders .slider h2 span {
+.slider .slide h2 span {
   color: var(--red);
-  font-size: 0.7em;
-  font-weight: 700;
+  font-size: 0.5em;
+  font-weight: 600;
   font-style: italic;
 }
 
 
-
-/* Css footer */
+/* setup vị trí của footer */
 footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: absolute;
-  width: 100%;
   bottom: 0;
+  width: 100%;
   padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+/* setup thuộc tính của các phần tử */
 footer .social {
   display: flex;
 }
-footer ul li {
+footer .social li {
   list-style: none;
 }
-footer ul li a{
+footer .social li a {
   color: var(--white);
-  font-size: 1.5em;
-  margin: 0 10px;
+  font-size: 2em;
+  margin-right: 20px;
   transition: 0.3s;
-  transition-property: color ;
 }
-footer ul li a:hover {
+footer .social li a:hover {
   color: var(--red);
 }
+
 footer .dots {
   display: flex;
 }
 footer .dots .dot {
-  width: 10px ;
+  width: 10px;
   height: 10px;
-  background-color: rgba(255, 255, 255,0.2);
-  margin-left: 10px;
   border-radius: 50%;
-  cursor: pointer;
+  margin-left: 20px;
+  background: rgba(255,255,255,0.5)
 }
-footer .dots .dot.active {
-  background-color: var(--white);
+footer .dots .dot.active { 
+  background: var(--white)
 }
-
-/* RESPONSIVE */
-
